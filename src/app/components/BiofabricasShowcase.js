@@ -7,7 +7,7 @@ const models = [
   {
     id: 'gold',
     name: 'Biofábrica Gold',
-    category: 'Premium • Comodato 3 anos',
+    category: 'Premium • Comodato',
     description: 'Nossa estrutura máxima em biotecnologia on-farm. Voltada para amplas necessidades produtivas, este modelo inclui a construção da infraestrutura em isopainel e fornecimento completo de todo o maquinário em comodato.',
     benefits: [
       '06 Biorreatores de Inox (2.000 L cada)',
@@ -24,7 +24,7 @@ const models = [
   {
     id: 'silver',
     name: 'Biofábrica Silver',
-    category: 'Advanced • Comodato 3 anos',
+    category: 'Advanced • Comodato',
     description: 'Sistema altamente eficiente com fornecimento em comodato. Ela mantém toda a escala de escala industrial da linha Gold, perfeitamente balanceada para atender ao nível rigoroso das grandes colheitas.',
     benefits: [
       '06 Biorreatores de Inox (2.000 L cada)',
@@ -40,7 +40,7 @@ const models = [
   {
     id: 'standalone',
     name: 'Bioreator Stand Alone',
-    category: 'Compact • Comodato 3 anos',
+    category: 'Compact • Comodato',
     description: 'Solução focada em produtores que já dispõem de estrutura física própria em suas fazendas. Oferece controle excepcional através da nossa planta de processos.',
     benefits: [
       '01 Biorreator de Inox Principal (2.000 L)',
@@ -55,7 +55,7 @@ const models = [
   {
     id: 'biobag',
     name: 'Sistema Biobag',
-    category: 'Essencial • Comodato 1 ano',
+    category: 'Essencial • Comodato',
     description: 'Multiplicação de alto desempenho especializada em fermentação líquida. É a opção ideal para adoção rápida e econômica do modelo on-farm, com alta rentabilidade.',
     benefits: [
       '01 Equipamento central de Multiplicação',

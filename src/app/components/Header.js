@@ -45,49 +45,65 @@ export default function Header() {
   ];
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      <div className={styles.container}>
-        <a href="/" className={styles.logo}>
-          <Image
-            src="/logo-tena.svg"
-            alt="Tena Soluções Sustentáveis"
-            width={140}
-            height={34}
-            className={styles.logoImage}
-            priority
-          />
-        </a>
-
-        <div className={`${styles.menuWrapper} ${menuOpen ? styles.menuOpen : ''}`}>
-          <nav className={styles.navLinks}>
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={styles.navLink}
-                onClick={() => setMenuOpen(false)}
-              >
-                <span className={styles.navIcon}>{link.icon}</span>
-                {link.label}
-              </a>
-            ))}
-          </nav>
-          
-          <a href="/#contato" className={styles.navCta} onClick={() => setMenuOpen(false)}>
-            Fale Conosco
+    <>
+      <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+        <div className={styles.container}>
+          <a href="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
+            <Image
+              src="/logo-tena.svg"
+              alt="Tena Soluções Sustentáveis"
+              width={140}
+              height={34}
+              className={styles.logoImage}
+              priority
+            />
           </a>
-        </div>
 
-        <button
-          className={`${styles.menuBtn} ${menuOpen ? styles.btnOpen : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          <div className={styles.desktopMenu}>
+            <nav className={styles.navLinks}>
+              {navLinks.map((link) => (
+                <a key={link.href} href={link.href} className={styles.navLink}>
+                  <span className={styles.navIcon}>{link.icon}</span>
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+            <a href="/#contato" className={styles.navCta}>
+              Fale Conosco
+            </a>
+          </div>
+
+          <button
+            className={`${styles.menuBtn} ${menuOpen ? styles.btnOpen : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      {/* Fullscreen Mobile Menu Overlay */}
+      <div className={`${styles.mobileOverlay} ${menuOpen ? styles.menuOpen : ''}`}>
+        <nav className={styles.mobileNavLinks}>
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className={`${styles.navLink} ${styles.mobileNavLink}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              <span className={styles.navIcon}>{link.icon}</span>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <a href="/#contato" className={styles.navCtaMobile} onClick={() => setMenuOpen(false)}>
+          Fale Conosco
+        </a>
       </div>
-    </header>
+    </>
   );
 }

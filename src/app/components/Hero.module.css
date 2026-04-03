@@ -165,11 +165,34 @@
 }
 
 @media (max-width: 480px) {
+  .content {
+    padding-bottom: 120px; /* Evita que o conteúdo sobreponha a barra de status */
+  }
   .title {
     font-size: 2.75rem;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 24px;
+    line-height: 1.5;
   }
   .statsBar {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 30px;
+    padding: 16px 8px;
+  }
+  .stat {
+    flex: 0 0 auto;
+  }
+  .statNumber {
+    font-size: 1.75rem;
+  }
+  .statLabel {
+    font-size: 0.75rem;
+    text-align: center;
   }
 }

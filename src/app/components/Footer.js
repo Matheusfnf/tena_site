@@ -25,22 +25,14 @@ export default function Footer() {
           <div className={styles.links}>
             <div className={styles.linkGroup}>
               <h4>Navegação</h4>
-              <a href="#sobre">Sobre Nós</a>
-              <a href="#tecnologia">Tecnologia</a>
-              <a href="#biofabricas">Biofábricas</a>
-              <a href="#impacto">Impacto</a>
-              <a href="#contato">Contato</a>
-            </div>
-            <div className={styles.linkGroup}>
-              <h4>Biofábricas</h4>
-              <a href="#biofabricas">Tena Gold</a>
-              <a href="#biofabricas">Tena PP</a>
-              <a href="#biofabricas">Tena Personalizada</a>
+              <a href="/">Início</a>
+              <a href="/sobre">Sobre</a>
+              <a href="/biofabricas">Biofábricas</a>
+              <a href="/#contato">Contato</a>
             </div>
             <div className={styles.linkGroup}>
               <h4>Contato</h4>
               <a href="mailto:financeiro@tenasolucoes.com.br">financeiro@tenasolucoes.com.br</a>
-              <a href="mailto:douglasalves@tenasolucoes.com.br">douglasalves@tenasolucoes.com.br</a>
               <a href="https://wa.me/5534998988262" target="_blank" rel="noopener noreferrer">(34) 99898-8262</a>
               <a href="https://instagram.com/tenasolucoes" target="_blank" rel="noopener noreferrer">@tenasolucoes</a>
             </div>
