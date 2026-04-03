@@ -1,0 +1,233 @@
+.showcaseWrapper {
+  padding: 80px 0;
+  background: linear-gradient(180deg, var(--green-50) 0%, rgba(240, 253, 244, 0.1) 100%);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 120px; /* Space between each model showcase */
+}
+
+/* Row Layout */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.rowReverse {
+  flex-direction: row-reverse;
+}
+
+/* Image Gallery Layout */
+.imageGallery {
+  flex: 1.25;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  grid-auto-rows: 460px;
+}
+
+/* Se houver só 1 foto, ela pega o espaço todo na largura, mas não duplica a altura */
+.fullFrame {
+  grid-column: span 2;
+}
+
+/* Quando a galeria tem apenas 1 foto, usamos proporção horizontal (paisagem) saudável e flexível */
+.singleGallery {
+  grid-auto-rows: auto;
+}
+.singleGallery .imageFrame {
+  aspect-ratio: 4 / 3;
+}
+
+/* Caso a galeria tenha 3 fotos, a primeira pega as duas colunas em cima */
+.imageFrame:first-child:nth-last-child(3) {
+  grid-column: span 2;
+}
+
+.imageInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-100);
+}
+
+.actualImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.imageInner:hover .actualImage {
+  transform: scale(1.05);
+}
+
+/* Content Block */
+.contentBlock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--green-50);
+  color: var(--green-700);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.benefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.benefitsList li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--gray-800);
+}
+
+.benefitsList li svg {
+  color: var(--green-600);
+  flex-shrink: 0;
+  padding: 2px;
+  background: var(--green-50);
+  border-radius: 50%;
+}
+
+/* Model Block e Video */
+/* Model Block e Video */
+.modelBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+  padding: 60px;
+  background: linear-gradient(135deg, var(--gray-50, #f8fafc) 0%, var(--white, #ffffff) 100%);
+  border-radius: var(--radius-2xl, 2rem);
+  border: 1px solid var(--gray-100, #f1f5f9);
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
+}
+
+.videoSection {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: var(--radius-xl, 1.5rem);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04));
+  background-color: var(--gray-900);
+  border: 4px solid var(--gray-100);
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* Proporção de 16:9 */
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  background-color: #000;
+}
+
+.videoIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.videoSectionPortrait {
+  flex: 0 0 320px; /* Largura ideal para ficar ao lado do texto em telas menores mantendo formato celular */
+  border-radius: var(--radius-2xl, 2rem);
+  width: 100%;
+}
+
+.videoWrapperPortrait {
+  padding-bottom: 177.78%; /* Proporção de 9:16 vertical (16/9 inverso) */
+}
+
+.imageGalleryBottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.imageGalleryBottom .imageFrame {
+  aspect-ratio: 1 / 1;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .row, .rowReverse {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .imageGallery {
+    width: 100%;
+  }
+  .modelBlock {
+    padding: 40px 30px;
+    border-radius: var(--radius-xl, 1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.25rem;
+  }
+  .imageGallery {
+    grid-auto-rows: 250px;
+  }
+  .container {
+    gap: 80px;
+  }
+  .videoSectionPortrait {
+    flex: auto;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .modelBlock {
+    padding: 30px 16px;
+    gap: 40px;
+  }
+}

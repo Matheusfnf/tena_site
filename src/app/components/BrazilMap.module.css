@@ -1,0 +1,139 @@
+.mapContainer {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mapSvg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
+}
+
+.statePath {
+  fill: #e5e7eb;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  transition: all 0.3s ease;
+}
+
+/* Base style for highlighted states */
+.stateHighlighted {
+  fill: #c1e6c7;
+  cursor: pointer;
+}
+
+/* Hover style */
+.stateHovered {
+  fill: #158b3d;
+  filter: drop-shadow(0 0 8px rgba(21, 139, 61, 0.4));
+  transform: translateY(-2px);
+  transform-origin: center;
+}
+
+.unitsGroup {
+  pointer-events: none;
+}
+
+.unitMarker {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.markerCircle {
+  fill: #27ae60;
+  stroke: #ffffff;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+
+
+
+.unitHovered .markerCircle {
+  fill: #145a32;
+  r: 10;
+}
+
+
+
+.markerLabel {
+  fill: #1f2937;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  background-color: white;
+  transform: translateX(-10px);
+}
+
+.labelVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.legend {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #f3f4f6;
+}
+
+.legend h3 {
+  font-size: 1.1rem;
+  color: #111827;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.legend ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #4b5563;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.legendItemHovered {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #158b3d;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background-color: #f0fdf4;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #27ae60;
+  display: inline-block;
+  box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.2);
+}
+
+
